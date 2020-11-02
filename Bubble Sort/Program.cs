@@ -8,7 +8,7 @@ namespace Bubble_Sort
 {
     class Program
     {
-        static List<int> Num = new List<int>() { 8, 1, 7, 19, 9, 15, 19, 111 }; // Defining the list of numbers.
+        static List<int> Num = new List<int>(); // Defining the list of numbers.
 
         static void Sorter()  // Creating a static sorting method, which sorts the list.
         {
@@ -46,7 +46,17 @@ namespace Bubble_Sort
 
         static void Main(string[] args)
         {
-
+            Console.WriteLine("Enter the numbers line-by-line and enter a blank line when done.\n");
+            var I = 0;
+            while (I == 0)
+            {
+                string Input = Console.ReadLine();
+                if (Input == "")
+                {
+                    break;
+                }
+                Num.Add(Convert.ToInt16(Input));
+            }
             
             while (CheckIfDone() == false) // This loop calls the 'Sorter' method till list is Sorted which is checked through 'CheckIfDone' method.
             {
